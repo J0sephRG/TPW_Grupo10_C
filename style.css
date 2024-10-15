@@ -64,44 +64,54 @@ button:hover {
 }
 
 #hero{
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     height: 90vh;
-    background-image: linear-gradient(
-        0deg, 
-        rgba(239, 232, 232, 0.5),
-        rgba(232, 226, 226, 0.5)),url("imagen/Fondo1.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
+    overflow: hidden; 
+    background-color: rgba(255, 255, 255, 0.5); 
 }
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+    transform: translate(-50%, -50%);
+}
+
 
 #Hola .contenedor {
     text-align: center;
-    padding: 200px 12px;
+    padding: 300px 12px;
 }
 
 #Mision .contenedor{
     text-align: center;
-    padding: 200px 12px;
+    padding: 300px 20px;
+    background-color: aqua;
 }
 
 #Vision .contenedor{
     text-align: center;
-    padding: 200px 12px;
+    padding: 300px 12px;
 }
 
 #Disciplinas{
     text-align: center;
-    padding: 200px 12px;
+    padding: 300px 12px;
 }
 
 #Galeria{
     text-align: center;
-    padding: 200px 0px;
+    padding: 300px 0px;
 }
 
 #Galeria .contenedor img{
@@ -110,12 +120,12 @@ button:hover {
 
 #Programas{
     text-align: center;
-    padding: 200px 12ox;
+    padding: 300px 12ox;
 }
 
 #Contactos {
     text-align: center;
-    padding: 200px 12ox;
+    padding: 300px 12ox;
 }
 
 
