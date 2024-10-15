@@ -137,13 +137,8 @@ section {
     height: 100vh;
     padding: 0;
     margin: 0; 
-    background-image: url("imagen/Nosotros.png");
-    min-height: 300px;
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-    width: 400px;
 }
+
 
 #Mision .contenedor{
     display: flex;
@@ -167,6 +162,17 @@ section {
     padding: 0;
     margin: 0; 
     background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.img-vision p{
+font-size: 18px; /* Tamaño del texto */
+line-height: 1.6;
+}
+
+.img-lado{
+width: 150px; /* Cambia el tamaño según lo necesites */
+height: auto;
+margin-right: 20px;
 }
 
 #Disciplinas{
@@ -210,12 +216,12 @@ section {
     color: rgb(0, 0, 0);
 }
 
-#Disciplinas ul li a {
+#Disciplinas ul li {
     text-decoration: none;
     color: inherit;
 }
 
-#Disciplinas ul li:hover a {
+#Disciplinas ul li:hover {
     color: rgb(7, 200, 248); /* Cambia el color del enlace cuando se hace hover */
     transform: scale(1.2); /* Agranda el icono ligeramente */
 }  
