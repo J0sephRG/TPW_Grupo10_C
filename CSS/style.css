@@ -24,6 +24,7 @@ body{
     margin: auto;
     max-width: 1400px;
     padding: 20px;
+    text-align: center;
 }
 
 /* Estilo del encabezado */
@@ -107,11 +108,11 @@ p {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden; 
     background-color: rgba(255, 255, 255, 0.5); 
 }
-
+/*Parte del video de fondo*/
 #background-video {
     position: absolute;
     top: 50%;
@@ -124,9 +125,6 @@ p {
     transform: translate(-50%, -50%);
 }
 
-section {
-    padding: 50px 0;
-}
 
 #Hola .contenedor {
     display: flex;
@@ -152,29 +150,25 @@ section {
     background-color: rgba(255, 255, 255, 0.5); 
 }
 
-#Vision .contenedor{
+#Vision .contenedor {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    padding: 0;
-    margin: 0; 
-    background-color: rgba(255, 255, 255, 0.5); 
 }
 
-.img-vision p{
-font-size: 18px; /* Tamaño del texto */
-line-height: 1.6;
+#Vision .img-vision{
+   background-size: cover;
+   background-position: center center;
+   height: 500px;
+   width: 400PX;
+}
+#Vision .texto{
+    width: 45%;
+
+    padding: 0px 30px;
 }
 
-.img-lado{
-width: 150px; /* Cambia el tamaño según lo necesites */
-height: auto;
-margin-right: 20px;
-}
 
+/*Seccion de disciplina*/
 #Disciplinas{
     display: flex;
     flex-direction: column;
@@ -227,35 +221,98 @@ margin-right: 20px;
 }  
 
 /* Estilo de la Galería */
-#Galeria{
+#Galeria {
+    padding: 2rem;
     text-align: center;
-    padding: 0px;
-}
+  }
 
-#Galeria .contenedor img {
-    max-height: 300px; 
-    max-width: 100%; 
-    margin-bottom: 20px; 
-}
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 
-#Galeria .content{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-#Galeria h2{
-    margin-bottom: 20px;
-}
-.galeri {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
+  /* Contenedor del carrusel */
+  .galeri-container {
+    position: relative;
     width: 100%;
-    padding: 20px;
-}
+    overflow: hidden;
+  }
+
+  .galeri {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-behavior: smooth;
+  }
+
+  /* Estilo de cada tarjeta de imagen */
+  .imagenes {
+    flex: 0 0 300px; /* Tamaño ajustado de cada imagen */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  .imagenes img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 150px;
+    object-fit: cover;
+  }
+
+  .imagenes h4 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .imagenes p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .imagenes a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #1e90ff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  /* Flechas de navegación */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
 #Programas{
     display: flex;
     flex-direction: column;
@@ -299,10 +356,7 @@ margin-right: 20px;
     object-fit: cover;
 
 }
-.contenedor{
-    padding: 15px;
-    text-align: center;
-}
+
 .contenedor p{
     line-height: 1.5;
     text-align: center;
