@@ -1,9 +1,9 @@
 const questions = [
     { question: "¿Cuál es el deporte con mayor número de jugadores?", correct: "X" },
-    { question: "¿Qué deporte se juega sobre césped?", correct: "Y" },
-    { question: "¿Cuál es el deporte olímpico más antiguo?", correct: "Z" },
-    { question: "¿Qué deporte usa una red alta?", correct: "W" },
-    { question: "¿Qué deporte se juega con una pelota y guantes?", correct: "X" },
+            { question: "¿Qué deporte se juega en el agua?", correct: "Y" },
+            { question: "¿Cuál es el deporte olímpico más actual?", correct: "Z" },
+            { question: "¿Qué deporte usa una red alta?", correct: "W" },
+            { question: "¿Qué deporte se juega con 11 jugadores de cada equipo?", correct: "X" },
 ];
 
 let currentQuestion = 0;
