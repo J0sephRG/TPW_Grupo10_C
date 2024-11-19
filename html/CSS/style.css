@@ -33,7 +33,9 @@ header {
 .logo {
     height: 70px;
 }
-
+a{
+    text-decoration: none;
+}
 .menu{
     display: flex;
     justify-content: center;
