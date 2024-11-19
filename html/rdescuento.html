@@ -6,8 +6,43 @@
   <title>Registro Academia Deportiva</title>
   <link rel="stylesheet" href="reg.css">
   <script defer src="script.js"></script>
+  <style>
+    /* Agrega este estilo en el archivo CSS o directamente en el HTML */
+    .progreso {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: red;
+      animation: movimientoColor 2s infinite alternate, movimientoVertical 1s infinite alternate;
+    }
+
+    @keyframes movimientoColor {
+      0% {
+        color: red;
+      }
+      100% {
+        color: blue;
+      }
+    }
+
+    @keyframes movimientoVertical {
+      0% {
+        top: 10px;
+      }
+      50% {
+        top: 15px;
+      }
+      100% {
+        top: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="progreso">Implementando un 5%</div>
+
   <div class="container">
     <h1>Modalidad de Deportes</h1>
     <h2>Temporada INVIERNO 2024 (Marzo - Noviembre)</h2>
