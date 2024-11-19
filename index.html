@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo que sea</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="JS/scrip.js">
 </head>
-
-<body class="menu">
+<body>
     
-    <header>
-        <div class="logo">
-            <img src="imagen/Logo2-removebg-preview.png" >
-        </div>
-            <nav>
-                <a href="#hero">Inicio</a>
-                <a href="#Hola">Sobre nosotros</a>
-                <a href="#Mision">Mision</a>
-                <a href="#Vision">Vision</a>
-                <a href="#Programas">Programas</a>
-                <a href="#Disciplinas">Disciplinas</a>
-                <a href="#Galeria">Galeria</a>
-                <a href="#Contactos">Contactos</a>
-            </nav>
+    <header id="Header">
+       <img src="imagen/Logo2-removebg-preview.png" class="logo "alt="">
+        <input type="checkbox" id="menu"/>
+        <label for="menu">
+            <img src="imagen/menu.png" class="menu_iconoo" alt="">
+        </label>
+        <ul class="menu">
+            <li class="item"><a href="#hero">Inicio</a></li>
+            <li class="item"><a href="#Hola">Sobre nosotros</a></li>
+            <li class="item"><a href="#Mision">Mision</a></li>
+            <li class="item"><a href="#Vision">Vision</a></li>
+            <li class="item"><a href="#Programas">Programas</a></li>
+            <li class="item"><a href="#Disciplinas">Disciplinas</a></li>
+            <li class="item"><a href="#Galeria">Galerias</a></li>
+            <li class="item"><a href="#Contactos">Contactos</a></li>
+        </ul>
     </header>
 
     <section id="hero">
@@ -33,51 +35,52 @@
         <button>Registrare ahora!</button>
     </section>
 
-    <section id="Hola">
-        <div class="contenedor">
-            <div class="img-contenedor">
+    <div id="carrusel-container">
+        <button class="nav-button" id="prevButton">‹</button>
+
+        <div id="carrusel">
+            <!-- Slide 1: Sobre Nosotros -->
+            <div class="slide">
                 <h2>Sobre Nosotros</h2>
-                <p> En nuestra academia ofrecemos programas deportivos para 
-                    todos los niveles y edades, desde entrenamientos básicos 
-                    hasta planes de alto rendimiento. Cada programa está diseñado 
-                    para mejorar habilidades y alcanzar objetivos específicos. 
-                    ¡Encuentra el programa perfecto para ti y comienza a 
-                    entrenar hoy mismo!
+                <p>En nuestra academia ofrecemos programas deportivos para todos los niveles y edades, 
+                   desde entrenamientos básicos hasta planes de alto rendimiento. Cada programa está 
+                   diseñado para mejorar habilidades y alcanzar objetivos específicos. ¡Encuentra el 
+                   programa perfecto para ti y comienza a entrenar hoy mismo!
+                </p>
+            </div>
+
+            <!-- Slide 2: Misión -->
+            <div class="slide">
+                <h2>Misión</h2>
+                <div class="img-mision">
+                    <img src="imagen/Mision.png" alt="Misión">
+                </div>
+                <p>Nuestra misión es inspirar y formar atletas íntegros, potenciando su desarrollo físico, 
+                   mental y emocional a través del deporte. Fomentamos valores como la disciplina, el esfuerzo 
+                   y el trabajo en equipo, creando un entorno donde cada persona pueda superar sus límites 
+                   y alcanzar su máximo potencial.
+                </p>
+            </div>
+
+            <!-- Slide 3: Visión -->
+            <div class="slide">
+                <h2>Visión</h2>
+                <div class="img-vision">
+                    <img src="imagen/Nosotros.png" alt="Visión">
+                </div>
+                <p>Ser una academia deportiva líder y referente a nivel nacional, reconocida por la excelencia 
+                   en la formación de atletas y su contribución a la sociedad. Aspiramos a transformar vidas a 
+                   través del deporte, promoviendo una cultura de superación, respeto y compromiso. Nuestra 
+                   visión es que cada alumno, además de destacar en su disciplina, adquiera valores que lo 
+                   impulsen a ser un líder en su comunidad y en todos los aspectos de su vida.
                 </p>
             </div>
         </div>
-    </section>
 
-    <section id="Mision">
-        <div class="contenedor">
-            <div class="img-mision"><img src="imagen/Mision.png"></div>
-            <div class="text">
-                <h2>Misión</h2>
-                <p>Nuestra misión es inspirar y formar atletas íntegros, 
-                    potenciando su desarrollo físico, mental y emocional a través
-                    del deporte. Fomentamos valores como la disciplina, el esfuerzo
-                    y el trabajo en equipo, creando un entorno donde cada persona 
-                    pueda superar sus límites y alcanzar su máximo potencial. </p>
-            </div>
-        </div>
-    </section>
+        <button class="nav-button" id="nextButton">›</button>
+    </div>
 
-    <section id="Vision">
-        <div class="contenedor">
-                <div class="img-vision"><img src="imagen/Nosotros.png"></div>
-                <div class="texto">
-                       <h2>Visión</h2>
-                        <p>Ser una academia deportiva líder y referente a nivel nacional,
-                        reconocida por la excelencia en la formación de atletas y su 
-                        contribución a la sociedad. Aspiramos a transformar vidas a
-                        través del deporte, promoviendo una cultura de superación, 
-                        respeto y compromiso. Nuestra visión es que cada alumno, 
-                        además de destacar en su disciplina, adquiera valores que 
-                        lo impulsen a ser un líder en su comunidad y en
-                        todos los aspectos de su vida.</p>
-                </div>
-            </div>
-    </section>
+    <script src="JS/scrip.js"></script>
     
     <section id="Programas">
         <div class="contenedor">
@@ -105,110 +108,61 @@
         </div>
     </section>
 
-    <section id="Galeria">
+    <section id="Galeria" class="seccion seccion-galeria">
         <div class="contenedor">
-          <h2>Galeria</h2>
-          <div class="galeri">
-            <div class="cont-tarjeta " id="imagen1">
-                <div class="imagenes">
-                    <img src="imagen/Futbol.avif" alt="Futbol">
-                    <h4>Futbol</h4>
-                    <p>Futuros cojos</p>
-                    <a href="Html/futbol.html">Leer más</a>
+            <h2>Galería</h2>
+            <div class="content">
+                <div class="imagenes" id="Futbol">
+                    <img src="imagen/Futbol.avif" alt="Fútbol" loading="lazy">
+                    <h4>Fútbol</h4>
+                    <p>Futuras estrellas del fútbol</p>
+                    <a href="fútbol.html">Leer más</a> 
                 </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
-                </div>
-            </div>
-            <div class="cont-tarjeta " id="imagen2">
-                <div class="imagenes">
-                    <img src="imagen/Voley.jpg" alt="Voley">
-                    <h4>Voley</h4>
+                <div class="imagenes" id="Voley">
+                    <img src="imagen/Voley.jpg" alt="Vóley" loading="lazy">
+                    <h4>Vóley</h4>
                     <p>Futuras deportistas del Perú</p>
-                    <a href="#">Leer más</a>
+                    <a href="voley.html">Leer más</a> 
                 </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
+                <div class="imagenes" id="Basquet">
+                    <img src="imagen/Basquetbol.webp" alt="Básquetbol" loading="lazy">
+                    <h4>Básquetbol</h4>
+                    <p>Futuras deportistas del Perú</p>
+                    <a href="básquetbol.html">Leer más</a> 
                 </div>
-            </div>
-            <div class="cont-tarjeta " id="imagen3">
-            <div class="imagenes">
-                <img src="imagen/Basquetbol.webp" alt="Basquetbol">
-                <h4>Basquetbol</h4>
-                <p>Futuras deportistas del Perú</p>
-                <a href="#">Leer más</a>
+                <div class="imagenes" id="Karate">
+                    <img src="imagen/Karate.webp" alt="Karate" loading="lazy">
+                    <h4>Karate</h4>
+                    <p>Futuras deportistas del Perú</p>
+                    <a href="karate.html">Leer más</a> 
                 </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
+                <div class="imagenes" id="Box">
+                    <img src="imagen/Box.webp" alt="Box" loading="lazy">
+                    <h4>Box</h4>
+                    <p>Futuras deportistas del Perú</p>
+                    <a href="box.html">Leer más</a> 
                 </div>
-            </div>
-            <div class="cont-tarjeta " id="imagen3">
-                <div class="imagenes">
-                <img src="imagen/Karate.webp" alt="Karate">
-                <h4>Karate</h4>
-                <p>Futuras deportistas del Perú</p>
-                <a href="#">Leer más</a>
+                <div class="imagenes" id="Taekwondo">
+                    <img src="imagen/Taekwondo.jpg" alt="Taekwondo" loading="lazy">
+                    <h4>Taekwondo</h4>
+                    <p>Futuras deportistas del Perú</p>
+                    <a href="taekwondo.html">Leer más</a> 
                 </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
+                <div class="imagenes" id="Tenis">
+                    <img src="imagen/Tenis.png" alt="Tenis" loading="lazy">
+                    <h4>Tenis</h4>
+                    <p>Futuras deportistas del Perú</p>
+                    <a href="tenis.html">Leer más</a> 
                 </div>
-            </div>
-            <div class="cont-tarjeta " id="imagen3">
-                <div class="imagenes">
-                <img src="imagen/Box.webp" alt="Box">
-                <h4>Box</h4>
-                <p>Futuras deportistas del Perú</p>
-                <a href="#">Leer más</a>
-                </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
+                <div class="imagenes" id="Natacion">
+                    <img src="imagen/Natacion_.jpg" alt="Natación" loading="lazy">
+                    <h4>Natación</h4>
+                    <p>Futuros deportistas del Perú</p>
+                    <a href="natación.html">Leer más</a> 
                 </div>
             </div>
-            <div class="cont-tarjeta " id="imagen3">
-                    <div class="imagenes">
-                <img src="imagen/Taekwondo.jpg" alt="Taekwondo">
-                <h4>Taekwondo</h4>
-                <p>Futuras deportistas del Perú</p>
-                <a href="#">Leer más</a>
-                </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
-                </div>
-            </div>
-            <div class="cont-tarjeta " id="imagen3">
-                <div class="imagenes">
-                <img src="imagen/Tenis.png" alt="Tenis">
-                <h4>Tenis</h4>
-                <p>Futuras deportistas del Perú</p>
-                <a href="#">Leer más</a>
-                </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
-                </div>
-            </div>
-            <div class="cont-tarjeta " id="imagen3">
-                    <div class="imagenes">
-                <img src="imagen/Natacion_.jpg" alt="Natación">
-                <h4>Natación</h4>
-                <p>Futuros deportistas del Perú</p>
-                <a href="#">Leer más</a>
-                </div>
-                <div class="tarjeta-item">
-                    <a href=""><i>I</i></a>
-                    <a href=""><i>D</i></a>
-                </div>
-            </div>
-          </div>
         </div>
-      </section>
-
+    </section>
     <section id="Contactos">
         <div class="contenedor">
             <h2>Contactos</h2>

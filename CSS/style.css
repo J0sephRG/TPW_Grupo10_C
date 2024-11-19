@@ -6,16 +6,66 @@
     padding: 0;
 }
 
-html{
-    scroll-behavior: smooth;
+body{
+    font-family: sans-serif;
+    flex-direction: column;
+     overflow-x: hidden; 
+    align-items: center; 
+    height: 100vh;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    flex-direction: column;
-    align-items: center; 
-    margin: 0;
-    height: 100vh;
+
+/* Estilo del encabezado */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #353543;
+    height: 80px;
+}
+/* Estilo del botones :v*/
+.logo {
+    height: 70px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(169, 230, 241);
+}
+.item:hover{
+    color: #070707;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-iconoo{
+    width: 25px;
+}
+
+label{
+    cursor: pointer;
+    display: none;
+}
+.menu a {
+    color: rgb(235, 246, 174);
+    text-decoration: none;
 }
 
 /* Contenedor principal */
@@ -27,76 +77,34 @@ body{
     text-align: center;
 }
 
-/* Estilo del encabezado */
-header {
-    display: flex;
-    flex-direction: column; 
-    min-height: 70px;
-    align-items: center;
-    background-color: aqua;
-    justify-content: space-between;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* Estilo del logo :v */
-.logo img {
-    max-height: 60px;
-}
-
-/* Estilo de navegación */
-nav {
-    display: flex;
-    flex-direction: column; 
-    gap: 10px; 
-    margin-top: 10px;
-
-}
-
-nav a {
-    color: white; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: color 0.3s; 
-    text-align: center; 
-    padding: 10px; 
-    border-radius: 5px;
-}
-
-nav a:hover {
-    color: #000000; 
-    background-color: rgba(222, 12, 12, 0.2); 
-}
-
 /* Estilo del botones */
 button {
     font-size: 1.5em;
     font-weight: bold;
     padding: 10px 30px;
     border-radius: 5px;
-    border: 2px solid rgba(0,0,0,0.3);
+    border: 2px solid rgba(148, 78, 78, 0.3);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    color: white;
-    background-color: rgb(131, 169, 239);
+    color: rgb(0, 0, 0);
+    background-color: rgba(234, 240, 117, 0.675);
+   
 }
 
 button:hover {
-    background-color: aqua;
+    background-color: rgba(255, 251, 0, 0.933);
 }
 
 /* Estilos de subtítulos */
 h2 {
     font-size: 2em;
     margin-top: 30px;
-    color: #333;
+    color: #000000;
 }
 
 /* Estilos de párrafos */
 p {
     line-height: 1.6;
+    color: #000000;
     margin: 10px 0;
 }
 
@@ -125,48 +133,74 @@ p {
     transform: translate(-50%, -50%);
 }
 
+/* Contenedor principal del carrusel */
+#carrusel-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-#Hola .contenedor {
+/* Estilos del carrusel */
+#carrusel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos de cada diapositiva */
+.slide {
+    min-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    height: 100vh;
-    padding: 0;
-    margin: 0; 
-}
-
-
-#Mision .contenedor{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
-    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Texto y contenido centrado dentro de cada slide */
+.slide h2, .slide p {
+    margin: 0;
     padding: 0;
-    margin: 0; 
-    background-color: rgba(255, 255, 255, 0.5); 
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-#Vision .contenedor {
-    display: flex;
-    justify-content: center;
+/* Estilos de los botones de navegación */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
 }
 
-#Vision .img-vision{
-   background-size: cover;
-   background-position: center center;
-   height: 500px;
-   width: 400PX;
-}
-#Vision .texto{
-    width: 45%;
-
-    padding: 0px 30px;
+#prevButton {
+    left: 2%;
 }
 
+#nextButton {
+    right: 3%;
+}
+
+.nav-button:hover {
+    background-color: rgb(68, 65, 65);
+}
 
 /*Seccion de disciplina*/
 #Disciplinas{
@@ -192,10 +226,10 @@ p {
 #Disciplinas ul li {
     display: flex;
     align-items: center;
-    font-size: 1.5em; /* Tamaño del texto inicial */
-    color: rgba(10, 10, 10, 0.932); /* Color inicial del texto */
+    font-size: 1.5em;
+    color: rgba(10, 10, 10, 0.932); 
     margin-bottom: 10px;
-    transition: transform 0.3s ease, color 0.3s ease; /* Transiciones para el hover */
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 #Disciplinas ul li:before {
@@ -222,97 +256,33 @@ p {
 
 /* Estilo de la Galería */
 #Galeria {
-    padding: 2rem;
     text-align: center;
-  }
+    padding: 0px;
+}
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Contenedor del carrusel */
-  .galeri-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .galeri {
+#Galeria .contenedor img {
+    max-height: 300px; 
+    max-width: 100%; 
+    margin-bottom: 20px; 
+}
+#Galeria .contenedor {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1rem;
-    padding: 1rem;
-    scroll-behavior: smooth;
-  }
+    flex-direction: column; 
+}
 
-  /* Estilo de cada tarjeta de imagen */
-  .imagenes {
-    flex: 0 0 300px; /* Tamaño ajustado de cada imagen */
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    scroll-snap-align: center;
-    text-align: center;
-  }
-
-  .imagenes img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    max-height: 150px;
-    object-fit: cover;
-  }
-
-  .imagenes h4 {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-    color: #333;
-  }
-
-  .imagenes p {
-    font-size: 0.9rem;
-    color: #666;
-  }
-
-  .imagenes a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #1e90ff;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-
-  /* Flechas de navegación */
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: #333;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+#Galeria .content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    margin-top: 20px; 
+}
 
-  .arrow-left {
-    left: 10px;
-  }
+.imagenes {
+    flex:0 0 30%; /* Cada imagen ocupa un 45% del ancho del contenedor */
+    margin: 20px; /* Espaciado entre las imágenes */
+    text-align: center; /* Centra el texto dentro de cada imagen */
+}
 
-  .arrow-right {
-    right: 10px;
-  }
 #Programas{
     display: flex;
     flex-direction: column;
@@ -371,26 +341,33 @@ p {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
+        padding: 10px 20px;
+    }
+    .menu { 
+        flex-direction: column;
+        align-items: center;
+        display: none;
     }
 
-    nav {
+    label {
+        display: initial;
+    }
+
+    .item{
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu:checked ~ .menu {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #7e7f88;
+        width: 100%;
     }
-
-    .menu-icon {
-        display: block;
-    }
-
-    nav a {
-        padding: 10px 15px;
-    }
-
     #hero {
         padding: 50px 20px;
     }
@@ -417,15 +394,6 @@ p {
     header {
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    nav {
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    nav a {
-        padding: 10px 15px;
     }
 
     #hero {
