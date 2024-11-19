@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+        .captcha-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            width: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .title-section {
+            width: 100%;
+            background-color: #007BFF;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        .title-top {
+            color: white;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .title-bottom {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .captcha-images {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .captcha-images img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: opacity 0.3s, border-color 0.3s;
+        }
+        .captcha-images img.selected {
+            border-color: green;
+            opacity: 0.7;
+        }
+        .captcha-images img.incorrect {
+            border-color: red;
+        }
+        .verify-button {
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .verify-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="captcha-container">
+    <div class="title-section">
+        <div class="title-top">Selecciona todas las imágenes que contengan</div>
+        <div class="title-bottom">Balones de fútbol</div>
+    </div>
+    
+    <div class="captcha-images" id="captchaImages">
+        <img src="imagen/X.png" alt="Balón de fútbol" class="captcha-image" data-correct="true">
+        <img src="imagen/Y.png" alt="Balón de fútbol" class="captcha-image" data-correct="true">
+        <img src="imagen/Z.png" alt="Balón de fútbol" class="captcha-image" data-correct="true">
+        <img src="imagen/W.png" alt="Balón de fútbol" class="captcha-image" data-correct="true">
+        <img src="imagen/Padel.png" alt="No1 balón de fútbol" class="captcha-image" data-correct="false">
+        <img src="imagen/Wilson.png" alt="No2 balón de fútbol" class="captcha-image" data-correct="false">
+        <img src="imagen/pinpon.png" alt="No3 balón de fútbol" class="captcha-image" data-correct="false">
+        <img src="imagen/Voley.jpg" alt="No4 balón de fútbol" class="captcha-image" data-correct="false">
+        <img src="imagen/Basquet.png" alt="No5 balón de fútbol" class="captcha-image" data-correct="false">
+    </div>
+    
+    <button class="verify-button" onclick="verifyCaptcha()">Verificar</button>
+</div>
+
+<script>
+    // Función para desordenar las imágenes al cargar la página
+    window.onload = () => {
+        const captchaImagesContainer = document.getElementById('captchaImages');
+        const images = Array.from(captchaImagesContainer.children);
+
+        for (let i = images.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [images[i], images[j]] = [images[j], images[i]];
+        }
+
+        captchaImagesContainer.innerHTML = '';
+        images.forEach(img => captchaImagesContainer.appendChild(img));
+    };
+
+    let selectedImages = [];
+
+    // Agregar funcionalidad de selección de imágenes
+    document.querySelectorAll('.captcha-image').forEach(image => {
+        image.addEventListener('click', () => {
+            if (image.classList.contains('selected')) {
+                image.classList.remove('selected');
+                selectedImages = selectedImages.filter(img => img !== image);
+            } else {
+                image.classList.add('selected');
+                selectedImages.push(image);
+            }
+        });
+    });
+
+    // Verificar selección de captcha
+    function verifyCaptcha() {
+        const correctImages = Array.from(document.querySelectorAll('.captcha-image')).filter(img => img.dataset.correct === "true");
+        const selectedCorrectly = selectedImages.every(img => img.dataset.correct === "true");
+
+        // Limpiar estilos de imágenes incorrectas
+        document.querySelectorAll('.captcha-image').forEach(img => {
+            img.classList.remove('incorrect');
+            if (selectedImages.includes(img) && img.dataset.correct === "false") {
+                img.classList.add('incorrect');
+            }
+        });
+
+        if (selectedCorrectly && selectedImages.length === correctImages.length) {
+            alert('¡Captcha verificado correctamente!');
+            window.location.href = 'index.html';
+        } else {
+            alert('¡Selecciona las imágenes correctas!');
+        }
+    }
+</script>
+
+</body>
+</html>

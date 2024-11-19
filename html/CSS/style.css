@@ -290,11 +290,18 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align:justify;
     height: 100vh;
     padding: 0;
     margin: 0; 
     background-color: rgba(255, 255, 255, 0.5); 
+}
+
+#Programas .programaszz{
+    list-style-type: square;
+    text-align:justify;
+    padding: 0 200px 0 ;
+    
 }
 #Contactos {
     display: flex;

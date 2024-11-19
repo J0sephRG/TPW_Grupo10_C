@@ -14,12 +14,13 @@ body {
     margin-bottom: 20px;
 }
 .tier-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+    grid-gap: 20px; /* Espacio entre las imágenes */
+    justify-items: center; /* Centra las imágenes en cada celda */
+    margin-top: 20px;
 }
 .option {
-    margin: 10px;
     cursor: pointer;
 }
 .option img {
@@ -27,6 +28,7 @@ body {
     height: 150px;
     border: 2px solid transparent;
     border-radius: 10px;
+    transition: border-color 0.3s ease; /* Suaviza el cambio de color al hacer hover */
 }
 .option img:hover {
     border-color: #007bff;

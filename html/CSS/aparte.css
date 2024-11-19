@@ -39,3 +39,15 @@
 .imagenes-container, .gif-container {
     margin-top: 100px; 
 }
+
+h1{
+    color: rgb(235, 246, 174);
+}
+a{
+    display: grid;
+    align-items:flex-start;
+    color: rgb(235, 246, 174);
+}
+.inicio-button:hover{
+    color: rgb(190, 245, 108);
+}
