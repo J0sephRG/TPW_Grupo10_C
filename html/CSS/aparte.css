@@ -1,0 +1,41 @@
+.imagenes-container {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+.imagen-lateral {
+    width: 30%; 
+    margin: 0 20px; 
+    height: auto; 
+}
+
+.texto {
+    flex: 1; 
+    text-align: center; 
+}
+
+/* Estilos para GIFs */
+.gif-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    margin-top: 20px; 
+}
+
+.gif-lateral {
+    width: 25%; 
+    height: auto; 
+}
+
+.texto-gif {
+    flex: 1; 
+    text-align: center; 
+    margin: 0 20px; 
+}
+
+
+.imagenes-container, .gif-container {
+    margin-top: 100px; 
+}
