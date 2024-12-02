@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Academia Deportiva</title>
+  <link rel="stylesheet" href="../CSS/reg.css">
+  <script defer src="../JS/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Modalidad de Deportes</h1>
+    <h2>Temporada INVIERNO 2024 (Marzo - Noviembre)</h2>
+    
+    <div class="registro-container">
+      <!-- Registro del Alumno -->
+      <div class="registro-alumno">
+        <h3>REGISTRO DEL ALUMNO</h3>
+        <form>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+          
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" placeholder="Ingresa tu apellido" required>
+          
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input type="date" id="fechaNacimiento" required>
+          
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" placeholder="Ingresa tu número de teléfono" required>
+          
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" id="correo" placeholder="Ingresa tu correo electrónico" required>
+          
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" placeholder="Ingresa tu dirección" required>
+        </form>
+      </div>
+      
+      <!-- Disciplinas y Horarios -->
+      <div class="disciplinas-horarios">
+        <h3>DISCIPLINAS Y HORARIOS</h3>
+        <form>
+          <label for="disciplina">Disciplina</label>
+          <select id="disciplina" onchange="mostrarHorarios()">
+            <option>-- Seleccionar --</option>
+            <option value="futbol">Fútbol</option>
+            <option value="basquet">Básquet</option>
+            <option value="voley">Vóley</option>
+            <option value="tenis">Tenis</option>
+            <option value="karate">Karate</option>
+            <option value="natacion">Natación</option>
+            <option value="box">Box</option>
+            <option value="taekwondo">Taekwondo</option>
+          </select>
+          <p>Horarios con vacantes disponibles.</p>
+          <div id="tablaHorarios" class="tabla-oculta">
+            <h4>Horarios Disponibles</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Edad</th>
+                  <th>Días</th>
+                  <th>Horas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>6-7</td>
+                  <td>Lun, Mie, Vie</td>
+                  <td>15:00 - 16:00 PM</td>
+                </tr>
+                <tr>
+                  <td>8-10</td>
+                  <td>Mar, Jue</td>
+                  <td>16:30 - 17:45 PM</td>
+                </tr>
+                <tr>
+                  <td>11-13</td>
+                  <td>Lun, Mie, Vie</td>
+                  <td>8:00 - 9:00 AM</td>
+                </tr>
+                <tr>
+                  <td>14-16</td>
+                  <td>Mar, Jue</td>
+                  <td>8:00 - 9:00 AM</td>
+                </tr>
+                <tr>
+                  <td>17-20</td>
+                  <td>Lun, Mie, Vie</td>
+                  <td>9:00 - 10:00 PM</td>
+                </tr>
+                <tr>
+                  <td>21-24</td>
+                  <td>Mar, Jue</td>
+                  <td>9:00 - 10:00 PM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <button class="btn-preinscripcion">Inscríbete</button>
+
+    <h3>Lista de Inscripciones</h3>
+    <table id="tablaInscripciones">
+    <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Disciplina</th>
+        <th>Horario</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+  </div>
+</body>
+</html>
+

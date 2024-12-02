@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/juego.css">
+    <title>Tier List Deportiva</title>
+    <script defer src="../JS/juegojs.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Desafío Deportista!</h1>
+        <div id="tierlist-container">
+            <p class="question" id="question">¿Qué deporte, que se juega en equipos de 11 jugadores por lado, es considerado el más popular y tiene una de las mayores audiencias a nivel mundial?</p>
+            <div class="tier-list">
+                <div class="option" onclick="checkAnswer('X')">
+                    <img src="../imagen/futbolol.png" alt="Opción X">
+                </div>
+                <div class="option" onclick="checkAnswer('Y')">
+                    <img src="../imagen/natacionon.png" alt="Opción Y">
+                </div>
+                <div class="option" onclick="checkAnswer('Z')">
+                    <img src="../imagen/Padel.png" alt="Opción Z">
+                </div>
+                <div class="option" onclick="checkAnswer('W')">
+                    <img src="../imagen/Voleivol.png" alt="Opción W">
+                </div>
+            </div>
+            <p id="result" class="hidden"></p>
+        </div>
+        <div id="win-message-container" class="hidden">
+            <div id="win-message">¡Ganaste un descuento en tu siguiente inscripción a algún deporte!</div>
+            <div id="discount">5% de descuento</div>
+            <a href="../Html/rdescuento.html" class="back-button">DIRIGIRSE AL REGISTRO</a>
+        </div>
+    </div>
+</body>
+</html>
